@@ -1,3 +1,8 @@
+/**
+ * @format
+ */
+
+
 import 'react-native-gesture-handler';
 import React from 'react';
 import {AppRegistry} from 'react-native';
@@ -21,4 +26,4 @@ const appRedux = () => (
     </Provider>
 )
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => appRedux);

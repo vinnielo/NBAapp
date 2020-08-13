@@ -41,14 +41,14 @@ const validationEmail = email => {
 }
 
 const validationMinLength = (value, ruleValue)=> {
-    if(value.legnth >= ruleValue){
+    if(value.length >= ruleValue){
         return true
     }
     return false
 }
 
 const validationMaxLength = (value, ruleValue)=> {
-    if(value.legnth <= ruleValue){
+    if(value.length <= ruleValue){
         return true
     }
     return false

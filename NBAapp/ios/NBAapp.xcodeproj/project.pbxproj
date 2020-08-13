@@ -57,6 +57,7 @@
 		2D02E47B1E0B4A5D006451C7 /* NBAapp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NBAapp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* NBAapp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NBAapp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54B0C9E9C63D3042C345F8F0 /* libPods-NBAapp-NBAappTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NBAapp-NBAappTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		778FC27E24E39BF900D48A5E /* NBAapp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NBAapp.xcodeproj; sourceTree = "<group>"; };
 		7938FBD32EFD34C1E0E8EFF8 /* libPods-NBAapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NBAapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7A256EE738EC1080B732D0 /* Pods-NBAapp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBAapp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-NBAapp-tvOSTests/Pods-NBAapp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NBAapp/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -148,7 +149,6 @@
 				7E7A256EE738EC1080B732D0 /* Pods-NBAapp-tvOSTests.debug.xcconfig */,
 				847CF3100AC0C603DCD90D5A /* Pods-NBAapp-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -165,9 +165,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		778FC27F24E39BF900D48A5E /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				778FC27E24E39BF900D48A5E /* NBAapp.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -287,7 +293,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1160;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
@@ -318,6 +324,12 @@
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 778FC27F24E39BF900D48A5E /* Products */;
+					ProjectRef = 778FC27E24E39BF900D48A5E /* NBAapp.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* NBAapp */,
@@ -610,6 +622,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F7355CC92E3069DDEA80F5B1 /* Pods-NBAapp-NBAappTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -633,6 +646,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F1B80899E8EFC48AE6926384 /* Pods-NBAapp-NBAappTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = NBAappTests/Info.plist;
