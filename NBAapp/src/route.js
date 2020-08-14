@@ -15,11 +15,55 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import SignIn from './components/auth';
 import News from './components/news';
+import Article from "./components/news/article"
 import Games from './components/games'
+import GamesArticle from "./components/games/article"
+
+import Logo from "./utils/logo"
+
+const headerConf= {
+    headerLayoutPreset: "center",
+    defaultNavigationOptions:{
+        headerStyle:{
+            backgroundColor: "#001338",
+        },
+        headerTintColor: 'white',
+        headerTitle: Logo
+    }
+}
+
+const NewsStack = createStackNavigator({
+    News: News,
+    Article: Article
+}, headerConf)
+
+const GamesStack = createStackNavigator({
+    Games: Games,
+    Article: GamesArticle
+}, headerConf)
 
 const AppStack = createBottomTabNavigator({
-    News: News,
-    Games:Games
+    News: NewsStack,
+    Games: GamesStack
+},{
+    tabBarOptions:{
+        activeTintColor: "#fff",
+        showLabel: false,
+        activeBackgroundColor: "#00194B",
+        inactiveBackgroundColor: "#001338",
+        style:{
+            backgroundColor: "blue"
+        }
+    },
+    initialRouteName: "News",
+    //defaultNavigationOptions:({navigation})=>({
+        //tabBarIcon:({focused, horizontal, tintColor})=>{
+           // const {routeName}= navigation.state;
+            // let iconName;
+            // routeName === 'News' ? iconName = faCoffee : iconName = faCoffee
+           // return <FontAwesomeIcon icon="faCoffee" size={"xs"} color={tintColor}/>
+       // }
+   // })
 });
 
 const AuthStack = createStackNavigator({
