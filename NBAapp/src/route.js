@@ -1,5 +1,6 @@
 import React from 'react';
 import {Platform} from  'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons'
 
 
 import { 
@@ -31,6 +32,7 @@ const headerConf= {
         headerTitle: Logo
     }
 }
+Ionicons.loadFont()
 
 const NewsStack = createStackNavigator({
     News: News,
@@ -56,14 +58,14 @@ const AppStack = createBottomTabNavigator({
         }
     },
     initialRouteName: "News",
-    //defaultNavigationOptions:({navigation})=>({
-        //tabBarIcon:({focused, horizontal, tintColor})=>{
-           // const {routeName}= navigation.state;
-            // let iconName;
-            // routeName === 'News' ? iconName = faCoffee : iconName = faCoffee
-           // return <FontAwesomeIcon icon="faCoffee" size={"xs"} color={tintColor}/>
-       // }
-   // })
+    defaultNavigationOptions:({navigation})=>({
+        tabBarIcon:({focused, horizontal, tintColor})=>{
+           const {routeName}= navigation.state;
+            let iconName;
+            routeName === 'News' ? iconName = 'ios-basketball' : iconName = 'ios-tv'
+           return <Ionicons name={iconName} size={25} color={tintColor}/>
+       }
+   })
 });
 
 const AuthStack = createStackNavigator({
