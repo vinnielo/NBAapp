@@ -32,15 +32,34 @@ class  GamesComponent extends Component {
           <View style={styles.gameContainer}>
 
               <View style={styles.gameBox}>
-                <Text>Hello</Text>
+                <Image 
+                  source={{uri: `https://buyandsellhuntingdogs.com/wp-content/uploads/2019/03/Lab-Puppy.jpg`}}
+                  style={{height: 80, width:80}}
+                  resizeMode="contain"
+                />
+                  <Text style={styles.teamRecord}>
+                    {item.awayData.wins} - {item.awayData.loss}
+                  </Text>
               </View>
               
               <View style={styles.gameBox}>
-                <Text>Hello</Text>
+                <Text style={styles.gameTime}>
+                  {item.time}
+                </Text>
+                <Text>
+                  {Moment(item.date).format('d MMMM')}
+                </Text>
               </View>
 
               <View style={styles.gameBox}>
-                <Text>Hello</Text>
+                <Image 
+                  source={{uri: `https://i.pinimg.com/originals/45/a4/e1/45a4e1a9dcddbd936c5586419842e397.jpg`}}
+                  style={{height: 80, width:80}}
+                  resizeMode="contain"
+                />
+                  <Text style={styles.teamRecord}>
+                    {item.localData.wins} - {item.localData.loss}
+                  </Text>
               </View>
 
           </View>
@@ -85,6 +104,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  teamRecord: {
+    fontFamily: "Roboto-Light",
+    fontSize: 12
+  },
+  gameTime: {
+    fontFamily: 'Roboto-Bold',
+    fontSize: 15
   }
 });
 
