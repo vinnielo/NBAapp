@@ -34,7 +34,7 @@ export const setTokens = (values,cb) =>{
     })
 }
 
-export const covertFirebase = (data) => {
+export const convertFirebase = (data) => {
     const newData = [];
 
     for(let key in data){
@@ -48,7 +48,7 @@ export const covertFirebase = (data) => {
 
 export const findTeamData = (teamId, teams) => {
     const value = teams.find((team) => {
-        return team.id === itemId
+        return team.id === teamId
     })
     return value;
 }
