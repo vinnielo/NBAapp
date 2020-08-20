@@ -1,7 +1,5 @@
 
 import React, { Component } from 'react';
-
-
 import {
 
   SafeAreaView,
@@ -10,21 +8,29 @@ import {
   View,
   Text,
   StatusBar,
+  Image,
+  TouchableOpacity
 } from 'react-native';
+import { connect } from 'react-redux';
+import { getGames } from '../../store/actions/games_actions'
+import Moment from 'moment';
 
+class  GamesComponent extends Component {
 
+  componentDidMount() {
+    this.props.displatch(getGames());
+  }
 
-export default class  GamesComponent extends Component {
   render(){
     
-  return (
+    return (
 
-      <View>
-        <Text>game Page</Text>
-      </View>
-      
-      
-  );
+        <View>
+          <Text>game Page</Text>
+        </View>
+        
+        
+    );
 }
 
   }
@@ -37,3 +43,12 @@ const styles = StyleSheet.create({
   },
  
 });
+
+function mapStateToProps(state) {
+  console.log(state);
+  return {
+    Games: state.Games,
+  }
+}
+
+export default connect(mapStateToProps)(GamesComponent);
