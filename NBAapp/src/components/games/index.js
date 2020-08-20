@@ -18,7 +18,7 @@ import Moment from 'moment';
 class  GamesComponent extends Component {
 
   componentDidMount() {
-    this.props.displatch(getGames());
+    this.props.dispatch(getGames());
   }
 
   render(){

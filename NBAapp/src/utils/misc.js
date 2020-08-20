@@ -45,3 +45,10 @@ export const covertFirebase = (data) => {
     }
     return newData;
 }
+
+export const findTeamData = (teamId, teams) => {
+    const value = teams.find((team) => {
+        return team.id === itemId
+    })
+    return value;
+}

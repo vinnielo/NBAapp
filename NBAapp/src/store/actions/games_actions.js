@@ -1,6 +1,6 @@
 import { GET_GAMES } from '../types';
 import axios from 'axios';
-import { FIREBASEURL, convertFirebase } from '../../utils/misc';
+import { FIREBASEURL, convertFirebase, findTeamData } from '../../utils/misc';
 
 export function getGames() {
 
@@ -16,14 +16,24 @@ export function getGames() {
                 url: `${FIREBASEURL}/games.json`
             }).then(response => {
                 const articles = convertFirebase(response.data);
+                const responseData = [];
+
+                for (let key in articles) {
+                    responseData.push({
+                        ...articles[key],
+                        awayData: findTeamData(articles[key].away, teams),
+                        localData: findTeamData(articles[key].local, teams)
+                    })
+                }
+                resolve(responseData)
             })
+        }).catch(e => {
+            reject(false)
         })
     })
 
     return {
         type: GET_GAMES,
-        payload: {
-            games: 'hhhh'
-        }
+        payload: promise
     }
 }
