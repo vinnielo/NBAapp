@@ -11,7 +11,7 @@ export default class  GameArticleComponent extends Component {
   render(){
   return (
       <View>
-        <Text>I am the game article component</Text>
+        <Text>I am the game article component, hello</Text>
       </View>
   );
 }
