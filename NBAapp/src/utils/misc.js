@@ -33,3 +33,22 @@ export const setTokens = (values,cb) =>{
         cb();
     })
 }
+
+export const convertFirebase = (data) => {
+    const newData = [];
+
+    for(let key in data){
+        newData.push({
+            ...data[key],
+            id: key
+        })
+    }
+    return newData;
+}
+
+export const findTeamData = (teamId, teams) => {
+    const value = teams.find((team) => {
+        return team.id === teamId
+    })
+    return value;
+}
