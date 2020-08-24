@@ -12,6 +12,8 @@ target 'NBAapp' do
 
 
 
+  pod 'react-native-video', :path => '../node_modules/react-native-video'
+
   target 'NBAappTests' do
     inherit! :complete
     # Pods for testing
